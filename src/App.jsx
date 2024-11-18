@@ -1,5 +1,6 @@
 import './App.css';
 import Nav from './componets/Nav';
+import requests from './utils/requests';
 
 function App() {
   return (
