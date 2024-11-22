@@ -1,12 +1,21 @@
 import './App.css';
+import Banner from './componets/Banner';
+import Category from './componets/Category';
 import Nav from './componets/Nav';
-import requests from './utils/requests';
 
 function App() {
+
   return (
     <>
     <Nav />
-      <div>Hi</div>
+    <main className='section__wrapper'>
+
+      <Banner />
+      <Category  />
+      <div>Category</div>
+      <div>Category</div>
+
+    </main>
     </>
   )
 }

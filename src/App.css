@@ -17,6 +17,12 @@ body{
 button:active{
   transform: translateY(1px);
 }
+
+/* Section */
+
+.section__wrapper{
+  position: relative;
+}
 /* Navigation */
 
 .nav{
@@ -26,6 +32,9 @@ button:active{
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  background-color: transparent;
+  position: absolute;
+  z-index: 10;
 }
 .nav__header{
   display: flex;
@@ -97,6 +106,7 @@ button:active{
   align-items: center;
   margin-top: 16px;
   border-top:2px gray solid;
+  z-index: 50;
 }
 
 .nav__dropdown--link{
@@ -111,4 +121,66 @@ button:active{
   .nav__browser{
     display: flex;
   }
+  .nav__icon{
+    width: 16px;
+    height: 16px;
+  }
+
 }
+
+/* Banner */
+.banner__containter{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.banner__img--wrapper{
+  display: flex;
+  position: absolute;
+}
+
+.banner__img{
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.banner__info--container{
+    width: calc(100% / 2);
+    padding-left: calc( 100% / 45) ;
+}
+
+.banner__info--para{
+  text-shadow: .5px .5px gray;
+}
+
+.banner__buttons{
+  display: flex;
+}
+.banner__button{
+  border-radius: 5px;
+  margin: 4px;
+  padding: 8px 12px;
+  border: none;
+}
+
+.play-btn{
+  color: black;
+  background: white;
+}
+.info-btn{
+  color: white;
+  background: gray;
+  display: flex;
+  align-items: center;  
+}
+.play-icon , .info-icon{
+  padding-right: 4px;
+}
+.info-icon{
+  font-size: 20px;
+}
+
+
+/* Categories */
