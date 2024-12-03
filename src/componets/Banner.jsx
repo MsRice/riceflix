@@ -19,7 +19,6 @@ const Banner = () => {
         )
     }, [requests])
 
-    console.log(movie)
 
     return (
         <div className='banner__containter'>

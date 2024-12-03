@@ -70,7 +70,6 @@ const requests = {
 
 }
 
-// console.log(requests)
 
 export default requests
 export const baseUrl = 'https://image.tmdb.org/t/p/original/'
