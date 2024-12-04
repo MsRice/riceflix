@@ -9,7 +9,7 @@ import Home_Unlogged from './pages/Home_Unlogged';
 import {onAuthStateChanged} from 'firebase/auth'
 import Registration from './pages/Registration';
 import React, { useState } from 'react';
-import { auth } from './utils/init';
+import { auth , db} from './utils/init';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
   const [user , setUser] = useState(false)
   const [email_input , setEmail_input] = useState(false)
   const [movie , setMovie] = useState(false)
+
 
   React.useEffect(() => {
     onAuthStateChanged(auth , (user) => {
@@ -29,9 +30,8 @@ function App() {
     })
   } ,[])
 
-  console.log(user)
-  console.log(reg_form)
-  // console.log(movie)
+  // console.log(user)
+  // console.log(reg_form)
 
 
   return (
@@ -47,8 +47,8 @@ function App() {
        <>
         <Nav user={user} setUser={setUser} setReg_form={setReg_form}/>
         <Routes>
-            <Route path='/' element={ <Home setMovie={setMovie}/>} />  
-            <Route path='/movie/:id'  element={<Movie movie={movie}/>} />
+            <Route path='/' element={ <Home setMovie={setMovie} user={user} />} />  
+            <Route path='/movie/:id'  element={<Movie movie={movie} user={user}/>} />
             <Route path='/tv/:id' element={<Tv />} />
         </Routes>
        </>

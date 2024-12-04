@@ -1,27 +1,24 @@
 import { H1Icon } from '@heroicons/react/20/solid';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import yt_embed from '../utils/youtube';
-// import { _key } from '../utils/youtube';
 import requests from '../utils/requests';
 import { FaPlay } from 'react-icons/fa6';
 import { FiThumbsUp } from 'react-icons/fi';
 import { HiOutlinePlus } from 'react-icons/hi';
+import { db } from '../utils/init';
+import { collection , addDoc , getDocs , getDoc , doc ,query , where} from 'firebase/firestore';
 
 
 
 
-
-function Movie({movie}){
+function Movie({movie ,user}){
    
     const { id } = useParams()     
     const key = "hDZ7y8RP5HE"
-    console.log(movie)
     yt_embed(id)
     
     const [global_key , setGlobal_key] = useState(false)
     
-    console.log(global_key)
     async function yt_embed(id){
         const BASE_URL = `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`
     
@@ -39,10 +36,19 @@ function Movie({movie}){
         
         const filter = youtube_dict.filter((elem) => elem.name === "Official Trailer")
         setGlobal_key(filter[0].key)
-        
-
-
     }
+
+    function addFavorites(movie){
+        // console.log(user.uid , movie)
+        const favorite = {
+            movie : movie ,
+            uid : user.uid,
+        }
+
+        addDoc(collection(db , "favorites"), favorite)
+    }
+
+    
     
     return (
         <div className='movie__details'>
@@ -50,19 +56,15 @@ function Movie({movie}){
                 <iframe  src= {`https://www.youtube.com/embed/${global_key}?autoplay=1`}
                 allow='autoplay'
                 frameborder="0" 
-            marginheight="0" 
-            marginwidth="0" 
-            width="100%" 
-            height="100%" 
-            scrolling="auto"
+                width="100%" 
+                height="100%" 
                 className='movie__trailer--vid'>
-                    
                 </iframe>
                 <div className='movie__details--wrapper'>
                     <h1 className='movie__details--title'>{movie.title || movie.name }</h1>
                     <div className='btns'>
                         <button className='banner__button play-btn no-pointer'><FaPlay className='play-icon'/>Play</button>
-                        <button className='banner__button'><HiOutlinePlus /></button>
+                        <button className='banner__button' onClick={() => {addFavorites(movie)}}><HiOutlinePlus /></button>
                         <button className='banner__button no-pointer'><FiThumbsUp/></button>
 
                     </div>
