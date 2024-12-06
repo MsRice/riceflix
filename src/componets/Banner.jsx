@@ -95,7 +95,7 @@ const Banner = ({movie , setMovie , favorites}) => {
                         <button onClick={() => {playBtn('tv')}} className='banner__button play-btn'><FaPlay className='play-icon'/>Play</button> 
                         <button className='banner__button info-btn' > 
                             <Link to={`/tv/${movie?.id}`} onClick={() => {setMovie(movie)}}>
-                                <BsInfoCircle className='info-icon'/>More Info That
+                                <BsInfoCircle className='info-icon'/>More Info
                             </Link>
                         </button>
                     </div>
@@ -106,7 +106,7 @@ const Banner = ({movie , setMovie , favorites}) => {
                 <button onClick={() => {playBtn('movie')}} className='banner__button play-btn'><FaPlay className='play-icon'/>Play</button> 
                 <button className='banner__button info-btn' > 
                     <Link to={`/movie/${movie?.id}`} onClick={() => {setMovie(movie)}}>
-                        <BsInfoCircle className='info-icon'/>More Info This
+                        <BsInfoCircle className='info-icon'/>More Info
                     </Link>
                 </button>
             
