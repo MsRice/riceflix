@@ -6,8 +6,7 @@ import { FaChevronRight } from 'react-icons/fa6';
 
 function Home_Unlogged ( {setEmail_input ,setReg_form }){
 
-    // console.log(reg_form)
-    // console.log(user)
+   
     return (
         <>
             <div className='unlogged-user__banner--wrapper'>
@@ -30,7 +29,7 @@ function Home_Unlogged ( {setEmail_input ,setReg_form }){
                     </Link>
                     <div className=''>
                         <select className='nav__unlogged--button sec--btn'>
-                            <option value="english" selected > English </option>
+                            <option value="english" defaultValue={'english'} > English </option>
                             <option value="spanish"> Spanish </option>
                         </select>
                         <button className='nav__unlogged--button'

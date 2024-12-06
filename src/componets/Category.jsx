@@ -30,7 +30,7 @@ const Category = ({title , movies , setMovie}) => {
                 <div className='movies__container' ref={rowRef}>
                     {movies.map((movie) =>
 
-                        <Thumbnail movie={movie} setMovie={setMovie}/>
+                        <Thumbnail movie={movie} setMovie={setMovie} key={movie.id}/>
 
                     )}
             

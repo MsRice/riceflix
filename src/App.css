@@ -108,9 +108,7 @@ button:active{
   flex-direction: column;
   right: 0;
 }
-.menu__open .nav__dropdown
-.acct__open 
-{
+.menu__open .nav__dropdown{
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -160,7 +158,9 @@ button:active{
   padding: 16px;
 }
 
-.acct__dropdown--link:hover{
+.acct__dropdown--link:hover ,
+.nav__link:hover,
+.nav__dropdown--link:hover {
   background-color: #2e2c2c98;
 }
 
@@ -457,6 +457,9 @@ button:active{
   margin: 4px;
   padding: 8px 12px;
   border: none;
+  z-index: 45;
+  border: 6px solid white;
+
 }
 
 .play-btn{
@@ -544,6 +547,7 @@ button:active{
   bottom: 0;
   height: 100%;
   width: 64px;
+  z-index: 50;
 }
 
 
@@ -640,8 +644,12 @@ button:active{
 
 .movie__trailer--wrapper{
   position: absolute;
-  top: 36px;
+  top: 56px;
   max-width: 1200px;
+}
+.related__details--wrapper{
+  position: absolute;
+  z-index: 100;
 }
 
 .movie__trailer--vid{
@@ -656,7 +664,70 @@ button:active{
   left: 0;
   padding: 0 16% 20% 16%;
   background-image: linear-gradient(transparent ,  #141414 , rgb(20, 20, 20));
+  z-index: 40;
+  width: 100%;
+  
 }
 .movie__details--title{
   font-size: 46px;
+ 
+}
+.movie__details--exit{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btns{
+  display: flex;
+  z-index: 50;
+}
+.unfavor{
+  border: 6px solid white;
+  background-color: #111010ca;
+  color: white;
+}
+
+
+.btns--favor:hover .unfavor--sec{
+  display: inline;
+}
+
+.unfavor--sec{
+  display: none;
+}
+
+
+.exit-btn{
+  z-index: 10;
+  font-size: 80px;
+}
+
+.exit-btn:hover{
+  color: red;
+}
+.related__details--wrapper{
+  width: 100%;
+  border: 2px solid chartreuse;
+
+}
+.related__container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.related__movie--wrapper{
+  /* border: 2px solid chartreuse; */
+  border-radius: 5px;
+  width: calc(100% / 5);
+  border: 2px solid purple;
+  margin: 0 4px ;
+  border-radius: 5px;
+}
+
+.related__img{
+  width: 100%;
 }

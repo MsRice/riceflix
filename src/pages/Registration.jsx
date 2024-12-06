@@ -17,6 +17,7 @@ function Registration({email_input , reg_form ,setUser , setReg_form}) {
 
     const submit_regeistration = (event) => {
         event.preventDefault()
+        console.log(reg_form)
         if(reg_form === 'registration'){
             register({email , pass})
         } else if(reg_form === 'login'){
@@ -122,16 +123,14 @@ function Registration({email_input , reg_form ,setUser , setReg_form}) {
                                             </Link>
                                         
                                     </button> :
-                                    <button 
-                                        type='submit' 
-                                        onClick={submit_regeistration}
-                                        className='sign-in__btn sign-in__btn--main'
-                                        >
-                                            <Link to={'/'}>
-                                                Sign In
-                                            
-                                            </Link>
-                                    </button>
+                                        <button 
+                                            type='submit' 
+                                            onClick={submit_regeistration}
+                                            className='sign-in__btn sign-in__btn--main'
+                                    ><Link to={'/'}>
+                                            Sign In
+                                    </Link>
+                                        </button>
                                 }
                                 <p className='or'>OR</p>
         

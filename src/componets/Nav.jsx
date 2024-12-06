@@ -27,12 +27,11 @@ const Nav = ({ user , setUser , setReg_form}) => {
         document.body.classList.remove('acct__open')
 
     }
-    console.log(user.email)
     function logout(){
         console.log(user.email)
-        setReg_form(false)
         signOut(auth)
         setUser(false)
+        setReg_form(false)
   
   
     }
@@ -50,11 +49,11 @@ const Nav = ({ user , setUser , setReg_form}) => {
                 </div>
             </Link>
                 <ul className="nav__links">
-                    <li className="nav__link">Home</li>
-                    <li className="nav__link">TV Shows</li>
-                    <li className="nav__link">Movies</li>
-                    <li className="nav__link">New & Popular</li>
-                    <li className="nav__link">My List</li>
+                    <li className="nav__link no-pointer">Home</li>
+                    <li className="nav__link no-pointer">TV Shows</li>
+                    <li className="nav__link no-pointer">Movies</li>
+                    <li className="nav__link no-pointer">New & Popular</li>
+                    <li className="nav__link no-pointer">My List</li>
                 </ul>
                 <div onMouseOver={dropdown_open} onMouseOut={dropdown_close}>
                     <div className='nav__browser cursor-pointer'>
@@ -63,11 +62,11 @@ const Nav = ({ user , setUser , setReg_form}) => {
                     </div>
                     <div className='nav__dropdown'>
                         <ul className="nav__dropdown--links">
-                            <li className="nav__dropdown--link cursor-pointer">Home</li>
-                            <li className="nav__dropdown--link cursor-pointer">TV Shows</li>
-                            <li className="nav__dropdown--link cursor-pointer">Movies</li>
-                            <li className="nav__dropdown--link cursor-pointer">New & Popular</li>
-                            <li className="nav__dropdown--link cursor-pointer">My List</li>
+                            <li className="nav__dropdown--link no-pointer">Home</li>
+                            <li className="nav__dropdown--link no-pointer">TV Shows</li>
+                            <li className="nav__dropdown--link no-pointer">Movies</li>
+                            <li className="nav__dropdown--link no-pointer">New & Popular</li>
+                            <li className="nav__dropdown--link no-pointer">My List</li>
                         </ul>
                     </div>
                 </div>
